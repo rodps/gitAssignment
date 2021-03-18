@@ -25,13 +25,23 @@ representam o conteúdo que você precisa preencher e postar em seu repositório
     -  `git log --decorate`
 
 ```
+$ git branch
+Mostra as duas branchs
+  feature-foo
+* master
 
+$ git checkout feature-foo
+Muda para a branch escolhida
+Switched to branch 'feature-foo'
+
+$ git log --decorate
+Mostra o log dos commits
 
 ```
 
 2. Tente usar `git log --graph --all`. O que acontece?
 ```
-
+Mostra a árvore de branchs completa
 
 ```
 
@@ -39,14 +49,19 @@ representam o conteúdo que você precisa preencher e postar em seu repositório
    Sumarize as diferenças do master e do outro ramo.
 
 ```
+$ git diff master
 
+foi adicionado o método foo() na classe A.java
 
 ```
 
 4. Escreva uma sequencia de comandos para mesclar o ramo não-master no `master`
 
 ```
-
+$ git checkout master
+$ git status
+$ git commit -a -m "commit changes"
+$ git merge feature-foo -m "mergin to master"
 
 ```
 
@@ -55,7 +70,7 @@ representam o conteúdo que você precisa preencher e postar em seu repositório
 e (ii) mudar para este ramo
 
 ```
-
+$ git checkout -b math
 
 ```
    
@@ -67,7 +82,7 @@ System.out.println(2+2)
 
 7. Escreva o comando (ou sequencia) para realizar o commit de suas mudanças
 ```
-
+$ git commit -a -m "i know math"
 
 ```
 
@@ -78,25 +93,32 @@ System.out.println("Hello World")
 
 9. Escreva uma sequência de comando para mesclar o branch `math` em` master` e descreva o que aconteceu
 ```
+$ git commit -a -m "hello world"
+$ git merge math -m "merging math to master"
 
+Mesclagem automática de B.java
+CONFLITO (conteúdo): conflito de mesclagem em B.java
+Automatic merge failed; fix conflicts and then commit the result.
 
 ```
    
 10. Escreva um conjunto de comandos para abortar a mesclagem
 ```
-
+$ git merge --abort
 
 ```
    
 11. Agora repita o item 9, mas prossiga com a mesclagem manual (Editando B.java). Todas as funções implementadas são necessárias. Explique o seu procedimento
 ```
+$ git merge math -m "merging math to master"
 
+Edita o arquivo de forma que permaneça ambasa as modificações
 
 ```
 
 12. Escreva um comando (ou conjunto de comandos) para prosseguir com a mesclagem e atualizar o branch `master`
 ```
-
+$ git commit -a -m "fix conflicts"
 
 ```
 
